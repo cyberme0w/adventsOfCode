@@ -1,4 +1,4 @@
-[Test extracted from adventofcode.com, year 2021, day 01]
+[Test extracted from adventofcode.com, year 2021, day 02]
 
 # Day 2: Dive!
 Now, you need to figure out how to pilot this thing.
