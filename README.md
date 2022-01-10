@@ -10,14 +10,14 @@ I would like to do a different programming language every year
 and currently am working on 2021 in C.
 
 # Status:
-Legend: D = Task done, W = Work in progress
+Legend: D = Task done, S = Task solved, W = Work in progress
 
 ## 2021
 Language: C
 
 ```
 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
-DD DD DD DD W  DD DD    DW                                           W  
+DD DD DD SS W  SS SS    SW                                           W  
 ```
 
 
