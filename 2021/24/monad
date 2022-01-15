@@ -1,0 +1,305 @@
+Monad Part 1
+inp w     // get input from position 
+mul x 0   // --
+add x z   // --
+mod x 26  // --
+div z 1   // --
+add x 14  // add 14 to x
+eql x w   // compare x to w -> x set to 0 because INPUT is always < 10
+eql x 0   // set x to 1
+mul y 0   // --
+add y 25  // set y to 25
+mul y x   // --
+add y 1   // set y to 26
+mul z y   // --
+mul y 0   // --
+add y w   // set y to INPUT
+add y 14  // set y to INPUT + 14
+mul y x   // --
+add z y   // set z to INPUT + 14
+
+// result:
+w - INPUT
+x - 1
+y - INPUT + 14
+z - INPUT + 14
+
+---------------------------------------------------------
+
+Monad Part 2
+inp w     // get input
+mul x 0   // --
+add x z   // --
+mod x 26  // --
+div z 1   // --
+add x 14  // --
+eql x w   // --
+eql x 0   // set x to 1
+mul y 0   // --
+add y 25  // --
+mul y x   // --
+add y 1   // set y to 26
+mul z y   // z = z * 26
+mul y 0   // --
+add y w   // --
+add y 2   // set y to INPUT + 2
+mul y x   // -- 
+add z y   // z = z + INPUT + 2
+
+--------------------------------------------------------
+
+Monad Part 3
+inp w     // get input
+mul x 0   // --
+add x z   // --
+mod x 26  // --
+div z 1   // --
+add x 14  // --
+eql x w   // --
+eql x 0   // set x to 1 (input is < 14)
+mul y 0   // --
+add y 25  // --
+mul y x   // --
+add y 1   // set y to 26
+mul z y   // z = z * 26
+mul y 0   // --
+add y w   // --
+add y 1   // set y to INPUT + 1
+mul y x   // --
+add z y   // set z to INPUT + 1 
+
+result:
+x = 1;
+z *= 26;
+y = val + 1;
+z += y; 
+   
+
+--------------------------------------------------------------
+
+Monad Part 4
+inp w
+mul x 0   // --
+add x z   // --
+mod x 26  // --
+div z 1   // --
+add x 12  // --
+eql x w   // --
+eql x 0   // set x to 1
+mul y 0   // --
+add y 25  // --
+mul y x   // --
+add y 1   // --
+mul z y   // z *= 26
+mul y 0   // --
+add y w   // -- 
+add y 13  // set y to input + 13
+mul y x   // --
+add z y   // z += input + 13
+
+result:
+x = 1;
+z *= 26;
+y = val + 13;
+z += y;
+
+--------------------------------------------------------------
+
+Monad Part 5
+inp w
+mul x 0  // 
+add x z  // 
+mod x 26 // 
+div z 1  //
+add x 15 // 
+eql x w  // 
+eql x 0  // x = 1
+mul y 0  // 
+add y 25 // 
+mul y x  // 
+add y 1  // 
+mul z y  // z *= 26
+mul y 0  // 
+add y w  // 
+add y 5  // y = val + 5
+mul y x  // 
+add z y  // z += y
+
+result:
+x = 1;
+z *= 26;
+y = val + 5;
+z += y;
+----------------------------------------------------------
+
+Monad Part 6 
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 5
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 5
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 9
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -7
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 3
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 13
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 13
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -8
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 2
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -5
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 1
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -10
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 11
+mul y x
+add z y
+
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -7
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 8
+mul y x
+add z y
