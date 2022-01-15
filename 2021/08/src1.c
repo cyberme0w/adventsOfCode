@@ -2,15 +2,6 @@
 #include <stdlib.h>
 #include "input_test.h"
 
-char** splitWords(char** sentence)
-{
-    // every sentence has 10 words and a total length of 59
-}
-
-void printSentence(char *words[], int length) {
-    for(int i = 0; i < 59
-}
-
 int main()
 {
 	/*  #  segments         count
