@@ -1,86 +1,68 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "h.h"
 
+//#define INPUT small_input
+//#define INPUT_ROWS 10
+#define INPUT input
+#define INPUT_ROWS 200
 
-/*
-    Solving this proved to be a bit tricky.
-    The way I want to do it is the following:
+void printInput(char *input[][14])
+{
+    for(int row = 0; row < INPUT_ROWS; row++)
+    {
+        printf("%.3d: ", row);
 
-    - Each sentence needs a 2D-Array, representing what each segment might represent.
-      For example:
-      The first sentence contains the lenght 2 word "BE". This means, B and E
-      must represent the one and are the vertical-right segments.
+        for(int col = 0; col < 14; col++)
+        {
+            if(col < 10 || col > 10)
+            {
+                printf("%s ", input[row][col]);
+            }
+            else
+            {
+                printf("    %s", input[row][col]);
+            }
+        }
 
-      Therefore, we know that the length 3 word "EDB", which also contains them, must
-      be a seven, since that is the only alternative.
-
-    - Once reducing every segment to its minimal possibilities, it should be possible
-      to calculate what number is hiding behind the 4-letter code.
-
-    - Repeat for every sentence in the input.
-
-
-    The 2D-Array for the first sentence after reading the first word should look like
-    this. (" " = false, X = true): 
-
-        a   b   c   d   e   f   g  
-    0   
-    1       X           X
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    
-    And after reading all letters could look something like this:
-
-        a   b   c   d   e   f   g
-    0   X   X       X   X   X   X
-    1       X           X
-    2       X   X       X   X   X
-    3       X   X   X   X       X
-    4   X   X   X       X
-    5   ...
-    6   ...
-    7       X       X   X   
-    8   X   X   X   X   X   X   X
-    9   ...
-
-    So we could interpret the 4-letter code by checking what letters are in each codeword.
-    For example:
-        eb abdefg bcefg abce -> 1024
-*/
-
-
-int main() 
-{   
-
+        printf("\n");
+    }
 }
 
-
-void toggleSegmentToUniqueNumber(SevenSegmentDisplay *ssd, char segment, int number)
+int countUniqueDigits(char *input[][14])
 {
-    // make segment small case
-    if(segment >= 'A' && segment <= 'G') {
-        segment += 32;    
+    int count = 0;
+
+    for(int row = 0; row < INPUT_ROWS; row++)
+    {
+        for(int col = 10; col < 14; col++)
+        {
+            int string_length = strlen(input[row][col]);
+            
+            if(string_length == 2 || string_length == 3 || string_length == 4 || string_length == 7)
+            {
+                count++;
+            }
+        }
     }
     
-    // throw error if out of bounds
-    if(segment < 'a' || segment > 'g') {
-        perror("Passed bad arg [segment]");
-        exit(EXIT_FAILURE);
-    }
-    
-    // toggle the appropriate segments based on the number and letter
-    int letter = segment - 97;
+    return count;
+}
 
-    ssd->
-    
-    ssd->segments[segment - 
+int main()
+{
+    // Hi.
+    printf("Advent of Code 2021: Day 08\n");
 
-   } 
+    // Print the test input.
+    printInput(input);
+    
+    // Count how many unique digits there are in the output.
+    int unique_digit_quantity;
+    unique_digit_quantity = countUniqueDigits(INPUT);
+    printf("There are %d unique digits in the output.\n", unique_digit_quantity);
+
+
+    return(EXIT_SUCCESS);
 }
